@@ -2,5 +2,6 @@
     min-height: 68vh;
     display: flex;
     flex-direction: column;
-    background-color:#E1E6F8 ;
+    background: rgb(229,228,241);
+    background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(225,230,248,1) 27%, rgba(168,225,250,1) 77%, rgba(0,212,255,1) 93%);
 }
