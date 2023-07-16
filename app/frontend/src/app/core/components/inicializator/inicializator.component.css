@@ -42,11 +42,17 @@ main{
     height: 25vh;
     align-items: center;
     justify-content: center;
-    background-color: #0a314d;
+    background: rgb(229,228,241);
+    background: linear-gradient(90deg, rgba(229,228,241,1) 11%, rgba(10,49,77,1) 100%, rgba(168,225,250,1) 100%, rgba(0,212,255,1) 100%);
     cursor: pointer;
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
     box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+    transition: all 1s;
+    box-sizing: border-box;
+}
+#circle :hover{
+    transform: scale(1) rotate(15deg);
 }
 #circle span{
     width: 17vh;

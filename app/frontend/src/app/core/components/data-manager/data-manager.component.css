@@ -15,11 +15,10 @@ main{
 .btn-data{
     display: flex;
     flex-direction: row;
-    cursor: pointer;
-    border: 2px solid #392CD6;
+    cursor: pointer;    
     padding: 1%;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 300;
     border-radius: 12px;
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
