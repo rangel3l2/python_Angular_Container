@@ -1,16 +1,24 @@
 nav{
     display: flex;   
     padding: 0.5em;
-    border-bottom: 1px solid #777;
-    background-color: #E1E6F8;
+    
+    -webkit-box-shadow: 3px 5px 2px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    3px 5px 2px rgba(170, 164, 164, 0.77);
+    box-shadow:         3px 5px 2px rgba(50, 50, 50, 0.77);
 }
 .brand{
     display: flex;    
     align-items: center;
+    
 }
 .brand img{
     width: 30%;    
     margin-right: 0.6em ;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
+    box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+    padding: 1%;
+    background: #fdfafa;
 
 }
 .content-title{
