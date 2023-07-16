@@ -1,0 +1,51 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3em;
+    flex-direction: column;
+    background-color: #FFF2F2;
+}
+.btn{
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items horizontally */
+    height: 50px; /* Set the height of the button */
+    width: 50px; /* Set the width of the button */
+    background-color: #D9D9D9; /* Set the background color of the button */
+    
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+   
+    margin-bottom: 2%;
+}
+.filters-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #D9D9D9;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 1.5%;
+    cursor: pointer;
+    padding: 0.5%;
+}
+#circle{
+   
+    display: flex;
+    border-radius: 50%;
+    width: 25vh;
+    height: 25vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #392CD6;
+    cursor: pointer;
+}
+#circle span{
+    width: 17vh;
+    height: 17vh;
+    font-size: 30px;
+    display: flex;
+    border-radius: 50%;
+}

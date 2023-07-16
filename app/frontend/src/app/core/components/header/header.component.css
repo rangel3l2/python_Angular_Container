@@ -1,0 +1,30 @@
+nav{
+    display: flex;   
+    padding: 0.5em;
+    border-bottom: 1px solid #777;
+    background-color: #E1E6F8;
+}
+.brand{
+    display: flex;    
+    align-items: center;
+}
+.brand img{
+    width: 30%;    
+    margin-right: 0.6em ;
+
+}
+.content-title{
+    position: absolute;
+    top: 1.7em;    
+    left: -0%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.content-title h2{
+    margin-top: 1%;
+    font-weight: 600;
+}

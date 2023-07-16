@@ -1,0 +1,6 @@
+.container{
+    min-height: 68vh;
+    display: flex;
+    flex-direction: column;
+    background-color:#E1E6F8 ;
+}
