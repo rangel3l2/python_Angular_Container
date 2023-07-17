@@ -4,8 +4,7 @@ main{
     justify-content: center;
     padding: 1.3em;
     flex-direction: column;
-    background: rgb(229,228,241);
-    background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(225,230,248,1) 27%, rgba(168,225,250,1) 77%, rgba(0,212,255,1) 93%);;
+    background: #24335a
 }
 .btn{
     display: flex;
@@ -13,11 +12,11 @@ main{
     justify-content: center; /* Align items horizontally */
     height: 50px; /* Set the height of the button */
     width: 50px; /* Set the width of the button */
-    background-color: #fdfafa; /* Set the background color of the button */    
+    background-color: #fdfafa; /* Set the background color of the button */
     font-size: 17px;
     font-weight: 400;
     border: none;
-   
+
     margin-bottom: 2%;
 }
 .filters-div{
@@ -35,7 +34,7 @@ main{
     box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
 }
 #circle{
-   
+
     display: flex;
     border-radius: 50%;
     width: 25vh;

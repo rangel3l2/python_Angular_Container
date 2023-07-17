@@ -5,7 +5,7 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angula
 @Component({
   selector: 'app-inicializator',
   templateUrl: './inicializator.component.html',
-  styleUrls: ['./inicializator.component.css']
+  styleUrls: ['./inicializator.component.scss']
 })
 export class InicializatorComponent implements OnInit {
   name?: string;
@@ -15,20 +15,22 @@ export class InicializatorComponent implements OnInit {
   quantity?: number;
   school?: School
   ngOnInit(): void {
-    
+
   }
   constructor(public dialog: MatDialog) {}
 
     openDialog(): void {
-      const dialogRef = this.dialog.open(ModalInicializatorComponent, {        
+      const dialogRef = this.dialog.open(ModalInicializatorComponent, {
+        width: '250px',
+
         data: {name: this.quantity, type: this.type, },
       });
-      dialogRef.afterClosed().subscribe(result => {        
-        this.school= result       
-        
+      dialogRef.afterClosed().subscribe(result => {
+        this.school= result
+
        })
   }
-  
+
 
 }
 
