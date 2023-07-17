@@ -78,7 +78,7 @@ class SchoolOperations:
         self.set_type_of_school(type_school)
         states_options = state.return_select_options()
 
-        csv_file = open('US_Schools.csv', 'w', newline='')
+        csv_file = open('US_Schools.csv', 'w', newline='', encoding='utf-8')
         spam_writer = csv.writer(csv_file, dialect='excel')
         spam_writer.writerow(["Name","Adress","Phone","Type"])
 
@@ -102,5 +102,5 @@ class SchoolOperations:
 
             states_options = state.return_select_options()
             index += 1
-        
+
         csv_file.close()

@@ -25,6 +25,8 @@ export class InicializatorComponent implements OnInit {
 
         data: {name: this.quantity, type: this.type, },
       });
+
+      
       dialogRef.afterClosed().subscribe(result => {
         this.school= result
 
