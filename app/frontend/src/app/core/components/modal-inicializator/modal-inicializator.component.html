@@ -4,20 +4,16 @@
     <p>How many school do you want?</p>
     <mat-form-field appearance="fill">
       <mat-label>quantity school "number"</mat-label>
-      <input type="number" matInput [(ngModel)]="data.quantity" />
+      <input type="number" matInput [(ngModel)]="data.number_schools" />
     </mat-form-field>
 
-    <mat-radio-group
-
-    aria-labelledby="example-radio-group-label"
-    class="example-radio-group"
-    [(ngModel)]="data.type">
-    <mat-label color="primary">How many schools do you want?</mat-label>
-    <mat-radio-button  class="example-radio-button" *ngFor="let item of school" [value]="item">
-      {{item}}
-    </mat-radio-button>
-  </mat-radio-group>
-  <div>selected school: {{data.type}}</div>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="data.type_school">
+      <mat-label color="primary">What type of school do you want?</mat-label>
+      <mat-radio-button class="example-radio-button" *ngFor="let item of school" [value]="item">
+        {{item}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>selected school: {{data.type_school}}</div>
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()" color="primary">No Thanks</button>
