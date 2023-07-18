@@ -5,11 +5,12 @@ import { DataManagerComponent } from './data-manager/data-manager.component';
 import { WebscrapingManagerComponent } from './webscraping-manager/webscraping-manager.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ModalInicializatorComponent } from './modal-inicializator/modal-inicializator.component';
+import { ModalInicializatorComponent } from './inicializator/modal-inicializator/modal-inicializator.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material/material/material.module';
 
 import {FormsModule} from '@angular/forms';
+import { InicializatorModule } from './inicializator/inicializator.module';
 
 const COMPONENTS= [
   HeaderComponent,
@@ -17,20 +18,22 @@ const COMPONENTS= [
   InicializatorComponent,
   WebscrapingManagerComponent,
   DataManagerComponent,
-  ModalInicializatorComponent
- 
+
+
 ]
 
 @NgModule({
   declarations: [
     COMPONENTS,
-    
+
   ],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    InicializatorModule
+
   ],
   exports:[
     COMPONENTS
