@@ -1,21 +1,26 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { School } from 'src/app/core/models/school';
+import { ModalDataServiceService } from '../../services/ModalDataService/modal-data-service.service';
+
 @Component({
   selector: 'app-modal-inicializator',
   templateUrl: './modal-inicializator.component.html',
   styleUrls: ['./modal-inicializator.component.scss']
 })
+
 export class ModalInicializatorComponent implements OnInit {
 
-  school: string[] = ['Pública', 'Privada', 'Pública e privada'];
+  school: string[] = ['Public', 'Private', 'Public and Private'];
   constructor(
     public dialogRef: MatDialogRef<ModalInicializatorComponent>,
+    public modalDataService:ModalDataServiceService,
     @Inject(MAT_DIALOG_DATA) public data: School,
-  ) {
+  ) {}
 
+  ngOnInit(): void {
+    this.modalDataService.setData(this.data)
   }
-  ngOnInit(): void {}
   onNoClick(): void {
     this.dialogRef.close();
   }
