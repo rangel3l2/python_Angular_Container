@@ -1,20 +1,24 @@
-<main *ngIf="this.receivedData" >
+<main *ngIf="!this.receivedData" >
 
     <div class="btn-data">
-        <span>Found Schools</span>
+        <span>Found </span>
+        <span>Schools</span>
         <mat-icon fontIcon="chevron_right">
         </mat-icon>
     </div>
-    <div class="btn-data" *ngIf="this.receivedData" (click)="downloadFile()">
+    <div class="btn-data" (click)="downloadFile()">
        <span>
-        Download File
+        Download
+      </span>
+      <span>
+        File
       </span>
         <mat-icon fontIcon="download">
         </mat-icon>
 
     </div>
     <div class="btn-data">
-        <span>Found Errors</span>
+        <span>Found </span><span>Errors</span>
         <mat-icon fontIcon="chevron_right">
 
         </mat-icon>

@@ -17,7 +17,6 @@ export class DataManagerComponent implements OnInit {
     ngOnInit(): void {
       this.getSharedData()
 
-
     }
       getSharedData(){
       this.service_data.data$.subscribe(data  => {

@@ -1,6 +1,8 @@
-
+:host{
+  height:12vh
+}
 main{
-
+    flex-shrink: comparable($number1: 1, $number2:2 );
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,14 +11,15 @@ main{
     background: rgb(229,228,241);
     background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(225,230,248,1) 27%, rgba(168,225,250,1) 77%, rgba(0,212,255,1) 93%);
     justify-content: space-around;
-    margin-top: 3%;
 
+    min-height: 70%;
+    flex-wrap: wrap;
 }
 .btn-data{
     display: flex;
-    flex-direction: row;
+    text-justify: center;
     cursor: pointer;
-    padding: 1%;
+    padding: 0.3em;
     font-size: 2em;
     font-weight: 300;
     border-radius: 12px;
@@ -24,5 +27,7 @@ main{
     -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
     box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
     background-color: #fdfafa;
+    gap: 1%;
+    margin-top: 3%;
 }
 
