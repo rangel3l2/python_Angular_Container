@@ -10,10 +10,8 @@ class SchoolOperations:
 
     def set_type_of_school(self,type_school): #School class
         checkbox_public = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[4]/td[3]/font/input')
-        # is_checked_public = checkbox_public.get_attribute('checked')
 
         checkbox_private = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[5]/td[3]/font/input')
-        # is_checked_private = checkbox_private.get_attribute('checked')
 
         checkbox_dict = {
             'public': checkbox_public,
@@ -26,24 +24,6 @@ class SchoolOperations:
         for type in types_str_list:
             if type in checkbox_dict:
                 checkbox_dict[type].click()
-
-        # if 'public' in type_school.lower() and not 'private' in type_school.lower():
-        #     if is_checked_private:
-        #         checkbox_private.click()
-        #     if not is_checked_public:
-        #         checkbox_public.click()
-
-        # if 'private' in type_school.lower() and not 'public' in type_school.lower():
-        #     if is_checked_public:
-        #         checkbox_public.click()
-        #     if not is_checked_private:
-        #         checkbox_private.click()
-
-        # if 'public' in type_school.lower() and 'private' in type_school.lower():
-        #     if not is_checked_public:
-        #         checkbox_public.click()
-        #     if not is_checked_private:
-        #         checkbox_private.click()
 
     def adjust_description_line(self,description,type_school):
         description_line = description.text.splitlines() #Esse passo não faz sentido usando os IDS, é necessário alterar o tratamento
