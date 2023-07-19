@@ -5,7 +5,7 @@ class CityOperations:
     def __init__(self,driver):
         self.driver = driver
 
-    def get_citys_names(self): #City class
+    def get_citys_names(self): 
         lists_of_citys = self.driver.find_elements(By.TAG_NAME,'li')
         city_names = []
         for li in lists_of_citys:
@@ -13,7 +13,7 @@ class CityOperations:
         return city_names
 
 
-    def put_city_in_input_box(self,city_name: str): #City class
+    def put_city_in_input_box(self,city_name: str): 
         input_city = self.driver.find_element(By.ID,'city') 
         input_city.clear()
         input_city.send_keys(city_name)

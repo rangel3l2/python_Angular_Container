@@ -8,7 +8,7 @@ class SchoolOperations:
     def __init__(self,driver):
         self.driver = driver
 
-    def set_type_of_school(self,type_school): #School class
+    def set_type_of_school(self,type_school): 
         checkbox_public = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[4]/td[3]/font/input')
 
         checkbox_private = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[5]/td[3]/font/input')
@@ -26,7 +26,7 @@ class SchoolOperations:
                 checkbox_dict[type].click()
 
     def adjust_description_line(self,description,type_school):
-        description_line = description.text.splitlines() #Esse passo não faz sentido usando os IDS, é necessário alterar o tratamento
+        description_line = description.text.splitlines() 
         del description_line[3:]
         description_line[2] = description_line[2].replace(' ','')
         description_line[2] = description_line[2][:13]
@@ -34,9 +34,9 @@ class SchoolOperations:
 
         return description_line
 
-    def set_school_description(self,csv_file,number_school,count): #School class
-        public_schools_table = self.driver.find_elements(By.ID,'hiddenitems_school') #Todas as escolas publicas vão pra essa variavel necessario novo tratamento
-        private_schools_table = self.driver.find_elements(By.ID,'hiddenitems_privschool') #O mesmo para as privadas
+    def set_school_description(self,csv_file,number_school,count): 
+        public_schools_table = self.driver.find_elements(By.ID,'hiddenitems_school') 
+        private_schools_table = self.driver.find_elements(By.ID,'hiddenitems_privschool') 
 
         spam_writer = csv.writer(csv_file, dialect='excel')
 
