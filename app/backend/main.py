@@ -32,7 +32,6 @@ async def home():
 async def executar_back(search_info: SearchInfo):
     driver_chrome = DriverOperations()
     driver_chrome.start_driver()
-
     school = SchoolOperations(driver_chrome.driver)
     number_found_schools = school.search_school(search_info.number_schools,search_info.type_school)
     return {"number_found_schools": number_found_schools, "number_not_found_schools": search_info.number_schools - number_found_schools}
