@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
 
   ],
   exports:[

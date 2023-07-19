@@ -33,7 +33,7 @@ main{
     -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
     box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
 }
-#circle{
+.circle{
 
     display: flex;
     border-radius: 50%;
@@ -50,13 +50,19 @@ main{
     transition: all 1s;
     box-sizing: border-box;
 }
-#circle :hover{
+.circle :hover{
     transform: scale(1) rotate(15deg);
 }
-#circle span{
+.circle span{
     width: 17vh;
     height: 17vh;
     font-size: 30px;
     display: flex;
     border-radius: 50%;
+}
+:host ::ng-deep .custom-spinner circle{
+    stroke:#a8e1fa;
+}
+.example-button {
+  margin-top: 16px;
 }

@@ -6,6 +6,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const COMPONENTS = [
   MatIconModule, 
@@ -14,7 +16,8 @@ const COMPONENTS = [
   MatInputModule,
   MatFormFieldModule, 
   MatRadioModule,
-
+  MatProgressSpinnerModule,
+  MatTooltipModule
 ]
 
 @NgModule({

@@ -10,10 +10,11 @@ export class SchoolService {
   baseUrl = API_CONFIG.baseUrl
   constructor(private http: HttpClient) {}
   save(school: School) :Observable<School>{
-    console.log('clicou')
-    return this.http.post<School>(this.baseUrl, school, {
+    console.log('clicou service')
+    return this.http.post<School>(`${this.baseUrl}` , school, {
        headers: new HttpHeaders({
         'Content-Type': 'application/json'
+        
        })
     })
     .pipe(catchError(this.handleError));
@@ -29,9 +30,9 @@ export class SchoolService {
     return throwError(()=>'There is a problem with the service. We are notified & working on it. Please try again later.')
     }
   getSchoolFile(): Observable<School>{
-    return this.http.get<School>(this.baseUrl,{
+    return this.http.get<School>(`${this.baseUrl}//download-file`,{
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        responseType: 'blob'
       })
 
     })

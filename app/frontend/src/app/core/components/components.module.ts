@@ -11,7 +11,6 @@ import { MaterialModule } from 'src/app/material/material/material.module';
 
 import {FormsModule} from '@angular/forms';
 import { InicializatorModule } from './inicializator/inicializator.module';
-
 const COMPONENTS= [
   HeaderComponent,
   FooterComponent,
@@ -23,10 +22,12 @@ const COMPONENTS= [
 ]
 
 @NgModule({
+
   declarations: [
     COMPONENTS,
 
   ],
+
   imports: [
     CommonModule,
     RouterModule,
