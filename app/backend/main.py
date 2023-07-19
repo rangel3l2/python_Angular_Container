@@ -35,10 +35,7 @@ async def executar_back(search_info: SearchInfo):
 
     school = SchoolOperations(driver_chrome.driver)
     number_found_schools = school.search_school(search_info.number_schools,search_info.type_school)
-    if number_found_schools == search_info.number_schools:
-        return {"number_found_schools": number_found_schools}
-    else:
-        return {"number_not_found_schools": search_info.number_schools - number_found_schools}
+    return {"number_found_schools": number_found_schools, "number_not_found_schools": search_info.number_schools - number_found_schools}
 
 @app.get("/download-file")
 async def return_file():
