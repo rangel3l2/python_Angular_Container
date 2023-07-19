@@ -8,33 +8,25 @@ class SchoolOperations:
     def __init__(self,driver):
         self.driver = driver
 
-    def set_type_of_school(self,type_school): #School class
+    def set_type_of_school(self,type_school): 
         checkbox_public = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[4]/td[3]/font/input')
-        is_checked_public = checkbox_public.get_attribute('checked')
 
         checkbox_private = self.driver.find_element(By.XPATH,'//*[@id="institutions"]/table/tbody/tr/td/table/tbody/tr[5]/td[3]/font/input')
-        is_checked_private = checkbox_private.get_attribute('checked')
 
-        if 'public' in type_school.lower() and not 'private' in type_school.lower():
-            if is_checked_private:
-                checkbox_private.click()
-            if not is_checked_public:
-                checkbox_public.click()
+        checkbox_dict = {
+            'public': checkbox_public,
+            'private': checkbox_private
+        }
+        
+        type_school = type_school.lower()
+        types_str_list = type_school.split(' ')
 
-        if 'private' in type_school.lower() and not 'public' in type_school.lower():
-            if is_checked_public:
-                checkbox_public.click()
-            if not is_checked_private:
-                checkbox_private.click()
-
-        if 'public' in type_school.lower() and 'private' in type_school.lower():
-            if not is_checked_public:
-                checkbox_public.click()
-            if not is_checked_private:
-                checkbox_private.click()
+        for type in types_str_list:
+            if type in checkbox_dict:
+                checkbox_dict[type].click()
 
     def adjust_description_line(self,description,type_school):
-        description_line = description.text.splitlines() #Esse passo não faz sentido usando os IDS, é necessário alterar o tratamento
+        description_line = description.text.splitlines() 
         del description_line[3:]
         description_line[2] = description_line[2].replace(' ','')
         description_line[2] = description_line[2][:13]
@@ -42,9 +34,9 @@ class SchoolOperations:
 
         return description_line
 
-    def set_school_description(self,csv_file,number_school,count): #School class
-        public_schools_table = self.driver.find_elements(By.ID,'hiddenitems_school') #Todas as escolas publicas vão pra essa variavel necessario novo tratamento
-        private_schools_table = self.driver.find_elements(By.ID,'hiddenitems_privschool') #O mesmo para as privadas
+    def set_school_description(self,csv_file,number_school,count): 
+        public_schools_table = self.driver.find_elements(By.ID,'hiddenitems_school') 
+        private_schools_table = self.driver.find_elements(By.ID,'hiddenitems_privschool') 
 
         spam_writer = csv.writer(csv_file, dialect='excel')
 
@@ -84,7 +76,7 @@ class SchoolOperations:
 
         index = 0
         count = 0
-        #Posicionar corretamente condições que interrompem a execução em determinado número de escolas
+
         for index in range(len(states_options)):
             if count >= number_school and number_school != -1:
                 break
@@ -104,3 +96,5 @@ class SchoolOperations:
             index += 1
 
         csv_file.close()
+
+        return count
