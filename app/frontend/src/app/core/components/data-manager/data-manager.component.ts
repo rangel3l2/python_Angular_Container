@@ -27,7 +27,7 @@ export class DataManagerComponent implements OnInit {
   downloadFile(): void {
 
 		this.service_school.getSchoolFile().subscribe((data: Blob) => {
-		const fileName = 'file.csv'
+		const fileName = 'US_Schools.csv'
 		FileSaver.saveAs(data, fileName)
 		});
 	}
