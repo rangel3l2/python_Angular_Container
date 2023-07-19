@@ -22,12 +22,12 @@ export class InicializatorComponent implements OnInit {
   quantity?: number;
   school?: School;
   start_btn_clicked?: boolean;
-  wait_file: string = ''
+
   constructor(public dialog: MatDialog,
               private service_school : SchoolService,
               public share_data : ShareDataService,
               private _router: Router,) {}
-	
+
     openDialog(): void {
       const dialogRef = this.dialog.open(ModalInicializatorComponent, {
         data: {name: this.quantity, type: this.type, },
@@ -38,31 +38,45 @@ export class InicializatorComponent implements OnInit {
        })
   	}
 	ngOnInit(): void {
-	this.set_school_search()
-	
+
+
 	}
 
 	set_school_search():void{
-   
-		if(this.school){
-      this.wait_file = 'true'
-      this.share_data.setSharedData(this.wait_file);				
-			this.start_btn_clicked = true
-			this.service_school.save(this.school).subscribe({
-			next: (school) =>{
-        this.wait_file = 'true'
-        this.share_data.setSharedData(this.wait_file);	
-				console.log(school)
-				this.start_btn_clicked = false				
-				this.school = undefined
-					
-				error: (err:any) => console.log(err)
-			    
-			}
-			})		
-		}
+    /* this.share_data.data$.subscribe((data) => {
+      if(this.school){
+        this.start_btn_clicked = true
+        this.service_school.save(this.school).subscribe({
+          next: (school) =>{
+            const data = { data : 'true' };
+            this.share_data.setSharedData(data);
+            this.start_btn_clicked = false
+            this.school = undefined
+          },
+            error: (err:any) => console.log(err)
+        })
+      }
+    }) */
+
+      if(this.school){
+        this.start_btn_clicked = true
+        this.service_school.save(this.school).subscribe({
+          next: (school) =>{
+            
+            const data = { data : 'true' };
+            this.share_data.setSharedData(data);
+
+            this.start_btn_clicked = false
+            this.school = undefined
+
+          },
+            error: (err:any) => console.log(err)
+
+
+    })
   }
-	
 
 
+
+  }
 }

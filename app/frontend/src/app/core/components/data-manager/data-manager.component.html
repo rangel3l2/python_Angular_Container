@@ -1,15 +1,22 @@
-<main>
-    <button *ngIf="this.receivedData"  (click)="downloadFile()">Download File</button>
+<main *ngIf="this.receivedData" >
+
     <div class="btn-data">
         <span>Found Schools</span>
         <mat-icon fontIcon="chevron_right">
-
         </mat-icon>
+    </div>
+    <div class="btn-data" *ngIf="this.receivedData" (click)="downloadFile()">
+       <span>
+        Download File
+      </span>
+        <mat-icon fontIcon="download">
+        </mat-icon>
+
     </div>
     <div class="btn-data">
         <span>Found Errors</span>
         <mat-icon fontIcon="chevron_right">
-            
+
         </mat-icon>
     </div>
 </main>

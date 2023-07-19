@@ -11,6 +11,7 @@ import { MaterialModule } from 'src/app/material/material/material.module';
 
 import {FormsModule} from '@angular/forms';
 import { InicializatorModule } from './inicializator/inicializator.module';
+import { ShareDataService } from '../services/share-data/share-data.service';
 const COMPONENTS= [
   HeaderComponent,
   FooterComponent,
@@ -27,6 +28,7 @@ const COMPONENTS= [
     COMPONENTS,
 
   ],
+  providers: [ShareDataService],
 
   imports: [
     CommonModule,

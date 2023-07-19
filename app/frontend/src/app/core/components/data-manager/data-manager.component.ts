@@ -8,20 +8,25 @@ import { ShareDataService } from '../../services/share-data/share-data.service';
   styleUrls: ['./data-manager.component.scss']
 })
 export class DataManagerComponent implements OnInit {
- receivedData : string = ''
+ receivedData : any
   constructor(
               private service_school : SchoolService,
               public service_data: ShareDataService,) {
-              
+
               }
     ngOnInit(): void {
-      this.receivedData = this.service_data.getSharedData()
-    
-                 console.log(this.receivedData)
+      this.getSharedData()
+
+
     }
+      getSharedData(){
+      this.service_data.data$.subscribe(data  => {
+      this.receivedData = data;
+      } )
+  }
   downloadFile(): void {
-		
-		this.service_school.getSchoolFile().subscribe((data: any) => {
+
+		this.service_school.getSchoolFile().subscribe((data: Blob) => {
 		const fileName = 'file.csv'
 		FileSaver.saveAs(data, fileName)
 		});

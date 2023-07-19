@@ -14,7 +14,7 @@ export class SchoolService {
     return this.http.post<School>(`${this.baseUrl}start-search` , school, {
        headers: new HttpHeaders({
         'Content-Type': 'application/json'
-        
+
        })
     })
     .pipe(catchError(this.handleError));
@@ -29,8 +29,8 @@ export class SchoolService {
     }
     return throwError(()=>'There is a problem with the service. We are notified & working on it. Please try again later.')
     }
-  getSchoolFile(): Observable<School>{
-    return this.http.get<School>(`${this.baseUrl}download-file`,{
+  getSchoolFile(): Observable<Blob>{
+    return this.http.get<Blob>(`${this.baseUrl}download-file`,{
       headers: new HttpHeaders({
         responseType: 'blob'
       })
