@@ -8,7 +8,7 @@ import { School } from 'src/app/core/models/school';
 })
 export class ModalInicializatorComponent implements OnInit {
  
-  school: string[] = ['Public', 'Private', 'Both']; 
+  school: string[] = ['Public', 'Private', 'Public and Private']; 
   constructor(
     public dialogRef: MatDialogRef<ModalInicializatorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: School,
