@@ -96,3 +96,5 @@ class SchoolOperations:
             index += 1
 
         csv_file.close()
+
+        return count
