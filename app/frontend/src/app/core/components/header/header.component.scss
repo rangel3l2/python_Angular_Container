@@ -46,7 +46,14 @@ nav{
     color: #24335a;
 }
 .content-nav{
-    min-width: 55%;
+    min-width: 60%;
     display: flex;
     justify-content: space-between;
 }
+@media (min-width: 1200px) {
+    .content-nav{
+        min-width: 55%;
+        display: flex;
+        justify-content: space-between;
+    }
+  }
