@@ -18,7 +18,7 @@ nav{
 
 }
 .brand img{
-    width: 9vw;
+    width: 15vh;
     margin-right: 0.8em ;
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     -moz-box-shadow:    9px 7px 5px rgba(170, 164, 164, 0.77);
@@ -46,7 +46,7 @@ nav{
     color: #24335a;
 }
 .content-nav{
-    width: 55%;
+    min-width: 55%;
     display: flex;
-    gap: 65%;
+    justify-content: space-between;
 }
