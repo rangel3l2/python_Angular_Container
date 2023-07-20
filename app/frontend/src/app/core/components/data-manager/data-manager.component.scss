@@ -1,5 +1,5 @@
 :host{
-  height:12vh
+  height: 30vh !important;
 }
 main{
     flex-shrink: comparable($number1: 1, $number2:2 );

@@ -11,9 +11,4 @@ export class ShareDataService {
 
     this.dataSubject.next(data);
   }
-
- /*  getSharedData(): string {
-    if(this.sharedData == 'true')console.log(this.sharedData)
-    return this.sharedData;
-  } */
 }
