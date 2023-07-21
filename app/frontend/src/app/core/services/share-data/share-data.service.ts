@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { School } from '../../models/school';
 @Injectable()
 export class ShareDataService {
   private dataSubject = new BehaviorSubject<any>(null);
@@ -7,7 +8,7 @@ export class ShareDataService {
   constructor() { }
   sharedData: string = '';
 
-  setSharedData(data: any): void {
+  setSharedData(data: School): void {
 
     this.dataSubject.next(data);
   }

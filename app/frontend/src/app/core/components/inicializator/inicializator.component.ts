@@ -43,27 +43,17 @@ export class InicializatorComponent implements OnInit {
 	}
 
 	set_school_search():void{
-    /* this.share_data.data$.subscribe((data) => {
-      if(this.school){
-        this.start_btn_clicked = true
-        this.service_school.save(this.school).subscribe({
-          next: (school) =>{
-            const data = { data : 'true' };
-            this.share_data.setSharedData(data);
-            this.start_btn_clicked = false
-            this.school = undefined
-          },
-            error: (err:any) => console.log(err)
-        })
-      }
-    }) */
+
 
       if(this.school){
         this.start_btn_clicked = true
         this.service_school.save(this.school).subscribe({
-          next: (school) =>{
-            
-            const data = { data : 'true' };
+          next: (school : School) =>{
+            console.log(school.number_not_found_schools, school.number_schools)
+          const data = {  "number_not_found_schools" : school.number_not_found_schools,
+                          "number_schools":school.number_schools 
+
+            };
             this.share_data.setSharedData(data);
 
             this.start_btn_clicked = false

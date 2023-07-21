@@ -11,7 +11,6 @@ main{
     background: rgb(229,228,241);
     background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(225,230,248,1) 27%, rgba(168,225,250,1) 77%, rgba(0,212,255,1) 93%);
     justify-content: space-around;
-
     min-height: 70%;
     flex-wrap: wrap;
 }
@@ -30,4 +29,10 @@ main{
     gap: 1%;
     margin-top: 3%;
 }
+.fonte_status{
+  color : #b93333;
+  font-size: 1.5em;
+  margin-left: 0.3em;
+}
+
 

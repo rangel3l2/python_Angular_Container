@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import { SchoolService } from '../../services/school-service/school-service.service';
 import { ShareDataService } from '../../services/share-data/share-data.service';
+import { School } from '../../models/school';
 @Component({
   selector: 'app-data-manager',
   templateUrl: './data-manager.component.html',
   styleUrls: ['./data-manager.component.scss']
 })
 export class DataManagerComponent implements OnInit {
-  receivedData : any
+  receivedData !: School
   constructor(
               private service_school : SchoolService,
               public service_data: ShareDataService,) {
@@ -19,9 +20,12 @@ export class DataManagerComponent implements OnInit {
 
   }
   getSharedData(){
-    this.service_data.data$.subscribe(data  => {
-    this.receivedData = data;
-      } )
+    this.service_data.data$.subscribe({
+      next: (data: School) =>{
+      this.receivedData = data;
+
+      }
+    })
   }
   downloadFile(): void {
 
@@ -30,4 +34,5 @@ export class DataManagerComponent implements OnInit {
 		FileSaver.saveAs(data, fileName)
 		});
 	}
+  
 }

@@ -3,6 +3,7 @@
     <div class="btn-data">
         <span>Found </span>
         <span>Schools</span>
+        <span class="fonte_status">{{this.receivedData.number_schools}}</span>
         <mat-icon fontIcon="chevron_right">
         </mat-icon>
     </div>
@@ -18,9 +19,10 @@
 
     </div>
     <div class="btn-data">
-        <span>Found </span><span>Errors</span>
+        <span>Found </span><span>Errors</span><span class="fonte_status">{{this.receivedData.number_not_found_schools}}</span>
         <mat-icon fontIcon="chevron_right">
 
         </mat-icon>
     </div>
 </main>
+
